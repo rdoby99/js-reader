@@ -1,8 +1,9 @@
 import React from "react";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function Analyzer() {
   return (
-    <section className="flex justify-center w-full py-16 px-16">
+    <section className="flex justify-between w-full py-16 px-16">
       <div>
         <h1 className="h1">Japanese Text Analyzer</h1>
         <p className="h4">
@@ -10,7 +11,9 @@ export default function Analyzer() {
           level
         </p>
       </div>
-      <div></div>
+      <div>
+        <Textarea />
+      </div>
     </section>
   );
 }
