@@ -419,7 +419,7 @@ video {
     --destructive-foreground: 0 0% 98%;
 
     --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
+    --input: 200 74% 43%;
     --ring: 200 95% 14%;
 
     --radius: 0.5rem;
@@ -615,11 +615,11 @@ video {
 .h-9 {
   height: 2.25rem;
 }
+.min-h-\[440px\] {
+  min-height: 440px;
+}
 .min-h-\[70vh\] {
   min-height: 70vh;
-}
-.min-h-\[80px\] {
-  min-height: 80px;
 }
 .w-10 {
   width: 2.5rem;
@@ -666,6 +666,9 @@ video {
 .justify-between {
   justify-content: space-between;
 }
+.gap-12 {
+  gap: 3rem;
+}
 .gap-16 {
   gap: 4rem;
 }
@@ -675,22 +678,19 @@ video {
 .gap-8 {
   gap: 2rem;
 }
-.gap-12 {
-  gap: 3rem;
-}
-.gap-y-16 {
-  row-gap: 4rem;
-}
 .gap-x-12 {
   -moz-column-gap: 3rem;
        column-gap: 3rem;
 }
-.gap-y-20 {
-  row-gap: 5rem;
-}
 .gap-x-16 {
   -moz-column-gap: 4rem;
        column-gap: 4rem;
+}
+.gap-y-16 {
+  row-gap: 4rem;
+}
+.gap-y-20 {
+  row-gap: 5rem;
 }
 .gap-y-24 {
   row-gap: 6rem;
@@ -762,6 +762,15 @@ video {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+.pb-24 {
+  padding-bottom: 6rem;
+}
+.pb-32 {
+  padding-bottom: 8rem;
+}
+.pt-16 {
+  padding-top: 4rem;
 }
 .text-center {
   text-align: center;
@@ -980,14 +989,11 @@ button:focus-visible {
 .hover\:bg-primary-foreground:hover {
   background-color: hsl(var(--primary-foreground));
 }
-.hover\:bg-primary\/90:hover {
-  background-color: hsl(var(--primary) / 0.9);
+.hover\:bg-primary-foreground\/90:hover {
+  background-color: hsl(var(--primary-foreground) / 0.9);
 }
 .hover\:bg-secondary\/80:hover {
   background-color: hsl(var(--secondary) / 0.8);
-}
-.hover\:bg-primary-foreground\/90:hover {
-  background-color: hsl(var(--primary-foreground) / 0.9);
 }
 .hover\:text-accent-foreground:hover {
   color: hsl(var(--accent-foreground));

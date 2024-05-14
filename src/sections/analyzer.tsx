@@ -13,7 +13,7 @@ export default function Analyzer() {
         </p>
       </div>
       <div className="col-span-1 flex flex-col gap-4">
-        <Textarea />
+        <Textarea placeholder="Input Japanese text here. ここに日本語のテキストを入力してください." />
         <Button>Analyze</Button>
       </div>
     </section>
