@@ -9,11 +9,6 @@
   -moz-osx-font-smoothing: grayscale;
 
   /* Colors */
-  --color-primary: #caecfc;
-  --color-secondary: #fb8500;
-  --color-tertiary: #1d89bf;
-  --color-text: #023047;
-  --color-bg: #ffffff;
   --color-n1: #db00a1;
   --color-n2: #ee8b00;
   --color-n3: #597e01;
@@ -21,12 +16,12 @@
   --color-n5: #0749ac;
 
   /* Fonts */
-  --font-heading: "Poppins", sans-serif;
+  --font-header: "Poppins", sans-serif;
   --font-body: "Noto Sans JP", sans-serif;
 
   color-scheme: light dark;
-  color: var(--color-text);
-  background-color: var(--color-bg);
+  color: var(--foreground);
+  background-color: var(--background);
 }
 
 a {
@@ -81,11 +76,11 @@ button {
 }
 
 .button--primary {
-  @apply border-2 border-secondary bg-white text-secondary;
+  @apply border-2 border-primary-foreground bg-primary-foreground text-white;
 }
 
 .button--secondary {
-  @apply border-2 border-secondary bg-white text-secondary;
+  @apply border-2 border-primary-foreground bg-white text-primary-foreground;
 }
 
 button:hover {
