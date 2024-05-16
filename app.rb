@@ -2,8 +2,11 @@ require 'sinatra'
 require 'json'
 require_relative 'public/ve.js'
 
+set :bind, 'localhost'
+set :port, 5173
+
 # Assuming `Ve` is available and the interface is correctly understood from the documentation
-get '/ichi1' do
+get '/ichi1/words' do
   content_type :json
 
   request.body.rewind  # in case someone already read it

@@ -7,10 +7,6 @@ export default function Analyzer() {
   const [output, setOutput] = useState([]);
 
   const analyzeText = () => {
-    // const veInstance = new Ve("ichi1");
-    // const results = veInstance.analyze(input);
-    // setOutput(results);
-
     new Ve("ichi1").words(input, function (words) {
       for (i in words) {
         var word = words[i];
