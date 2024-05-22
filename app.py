@@ -3,13 +3,8 @@ from flask_cors import CORS
 import MeCab
 
 app = Flask(__name__)
-CORS(app, resources={r"/words": {"origins": "*"}}, supports_credentials=True)
+CORS(app)
 m = MeCab.Tagger()
-
-@app.after_request
-def after_request(response):
-    print("Debugging Headers:", response.headers)
-    return response
 
 @app.route('/words', methods=['GET'])
 def words():
@@ -19,4 +14,4 @@ def words():
     return jsonify(words=words)
 
 if __name__ == "__main__":
-    app.run(port=5000)
+    app.run(debug=True)

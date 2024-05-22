@@ -10,12 +10,9 @@ export default function Analyzer() {
   const analyzeText = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5000/words?text=${encodeURIComponent(input)}`,
+        `http://127.0.0.1:5000/words?text=${encodeURIComponent(input)}`,
         {
           method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
         }
       );
 
@@ -49,7 +46,7 @@ export default function Analyzer() {
         <Button onClick={analyzeText}>Analyze</Button>
         <ul>
           {output.map((item, index) => (
-            <li key={index}>{item.surface}</li>
+            <li key={index}>{item}</li>
           ))}
         </ul>
       </div>
