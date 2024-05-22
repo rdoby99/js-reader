@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 export default function Analyzer() {
   const [input, setInput] = useState("");
   const [output, setOutput] = useState([]);
+  const [error, setError] = useState("");
 
   const analyzeText = async () => {
     try {
@@ -26,8 +27,7 @@ export default function Analyzer() {
       setOutput(data.words);
     } catch (error) {
       console.error("An error occurred:", error);
-      // You can also set the error message in your component's state to display it in your UI
-      // setError(error.message);
+      setError(error.message);
     }
   };
 

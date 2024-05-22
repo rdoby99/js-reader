@@ -3,8 +3,13 @@ from flask_cors import CORS
 import MeCab
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS on the Flask application
+CORS(app, resources={r"/words": {"origins": "*"}}, supports_credentials=True)
 m = MeCab.Tagger()
+
+@app.after_request
+def after_request(response):
+    print("Debugging Headers:", response.headers)
+    return response
 
 @app.route('/words', methods=['GET'])
 def words():
