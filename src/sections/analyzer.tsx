@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import Breakdown from "./breakdown";
 
 export default function Analyzer() {
+  const [analysis, setAnalysis] = useState(false);
+
   const [input, setInput] = useState("");
   const [output, setOutput] = useState([]);
   const [error, setError] = useState("");
@@ -22,6 +25,7 @@ export default function Analyzer() {
 
       const data = await response.json();
       setOutput(data.words);
+      setAnalysis(true);
     } catch (error) {
       console.error("An error occurred:", error);
       setError(error.message);
@@ -30,13 +34,17 @@ export default function Analyzer() {
 
   return (
     <section className="grid grid-cols-2 gap-16 items-center w-full py-16 px-16 min-h-[70vh]">
-      <div className="text-center col-span-1 flex flex-col gap-4">
-        <h1 className="h1">Japanese Text&nbsp;Analyzer</h1>
-        <p className="h4">
-          Input Japanese text to get a breakdown of vocabulary words by JLPT
-          level
-        </p>
-      </div>
+      {analysis ? (
+        <Breakdown words={output} />
+      ) : (
+        <div className="text-center col-span-1 flex flex-col gap-4">
+          <h1 className="h1">Japanese Text&nbsp;Analyzer</h1>
+          <p className="h4">
+            Input Japanese text to get a breakdown of vocabulary words by JLPT
+            level
+          </p>
+        </div>
+      )}
       <div className="col-span-1 flex flex-col gap-4">
         <Textarea
           placeholder="Input Japanese text here. ここに日本語のテキストを入力してください..."
@@ -44,11 +52,6 @@ export default function Analyzer() {
           onChange={(e) => setInput(e.target.value)}
         />
         <Button onClick={analyzeText}>Analyze</Button>
-        <ul>
-          {output.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </ul>
       </div>
     </section>
   );
