@@ -22,9 +22,13 @@ export default function Breakdown(props) {
         <div className="max-h-[440px] overflow-y-scroll">
           <ul className="flex flex-col divide-y divide-black">
             {props.words.map((item, index) => (
-              <li key={index} className="flex gap-2 py-4">
-                <div className="h5">{item}</div>
+              <li key={index} className="flex flex-col gap-2 py-4">
+                <div className="h5 mr-4">{item}</div>
+                <div className="p-1 bg-pink-500 text-xs text-white inline-block w-fit">
+                  JLPT N3
+                </div>
                 <p>Amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                <div className="inline-block border border-black w-5 h-5"></div>
               </li>
             ))}
           </ul>

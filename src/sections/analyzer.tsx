@@ -52,6 +52,7 @@ export default function Analyzer() {
           onChange={(e) => setInput(e.target.value)}
         />
         <Button onClick={analyzeText}>Analyze</Button>
+        {analysis ? <Button variant="text">Reset</Button> : null}
       </div>
     </section>
   );
